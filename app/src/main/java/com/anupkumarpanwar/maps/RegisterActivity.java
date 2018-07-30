@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void InsertData() {
         try {
-            URL url = new URL("https://nearcabs.000webhostapp.com/api/user_signup.php");
+            URL url = new URL(getString(R.string.CLOUD_HOST_URL) + "/user_signup.php");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setDoInput(true);
@@ -107,8 +107,8 @@ public class RegisterActivity extends AppCompatActivity {
             String inputPassword=txtPassword.getText().toString();
 
             String data="name="+URLEncoder.encode(inputName, "UTF-8")+"&phone="+URLEncoder.encode(inputPhone, "UTF-8")+"&email="+URLEncoder.encode(inputEmail, "UTF-8")+"&password="+URLEncoder.encode(inputPassword, "UTF-8");
-//            data= URLEncoder.encode(data,"UTF-8");
-//            Toast.makeText(getApplicationContext(),data,Toast.LENGTH_LONG).show();
+            //data= URLEncoder.encode(data,"UTF-8");
+            Toast.makeText(getApplicationContext(),data,Toast.LENGTH_LONG).show();
             writer.write(data);
             writer.flush();
             writer.close();
@@ -142,7 +142,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
         catch (Exception e)
         {
-//            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_LONG).show();
         }
 
 

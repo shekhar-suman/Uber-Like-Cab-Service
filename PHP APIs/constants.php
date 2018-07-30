@@ -1,8 +1,8 @@
 <?php
 	$dbServer='localhost';
-	$dbUsername='root';
-	$dbPassword='';
-	$dbName='spic';
+	$dbUsername='cabs';
+	$dbPassword='cabs';
+	$dbName='cabs_dev';
 
 
 	// $dbServer='localhost';

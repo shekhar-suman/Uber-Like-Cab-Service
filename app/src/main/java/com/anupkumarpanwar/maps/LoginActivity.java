@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     {
         try
         {
-            URL url=new URL("https://nearcabs.000webhostapp.com/api/user_login.php");
+            URL url=new URL(getString(R.string.CLOUD_HOST_URL) + "/user_login.php");
             HttpURLConnection httpURLConnection=(HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);

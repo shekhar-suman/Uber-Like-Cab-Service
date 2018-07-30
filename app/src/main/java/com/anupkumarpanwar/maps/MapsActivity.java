@@ -164,7 +164,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 try {
 
-                    String api_url="https://nearcabs.000webhostapp.com/api/book_cab.php";
+                    String api_url=getString(R.string.CLOUD_HOST_URL) + "/book_cab.php";
 
                     double src_lat=source_location_marker.getPosition().latitude;
                     double src_lng=source_location_marker.getPosition().longitude;
@@ -248,7 +248,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             @Override
                             public void onClick(View view) {
                              try {
-                                 String cancel_api_url = "https://nearcabs.000webhostapp.com/api/cancel_book_cab.php";
+                                 String cancel_api_url = getString(R.string.CLOUD_HOST_URL) + "/cancel_book_cab.php";
                                  String cancel_book_now_request = "ride_id=" + URLEncoder.encode(ride_id, "UTF-8")+ "&cab_id=" + URLEncoder.encode(cab_id, "UTF-8");
 
                                  JSONObject cancel_response_data = call_api(cancel_api_url, cancel_book_now_request);
@@ -418,7 +418,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             MarkerOptions markerOptions1;
             try {
 
-                String api_url="https://nearcabs.000webhostapp.com/api/get_cab_location.php";
+                String api_url=getString(R.string.CLOUD_HOST_URL) + "/get_cab_location.php";
 
                 String get_cab_location_request="cab_id="+ URLEncoder.encode(cab_id, "UTF-8")+"&ride_id="+ URLEncoder.encode(ride_id, "UTF-8");
 
@@ -613,7 +613,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
   public void setNearbyCabsOnMap(LatLng latLng)
   {
       try {
-          String api_url="https://nearcabs.000webhostapp.com/api/get_near_cabs.php";
+          String api_url=getString(R.string.CLOUD_HOST_URL) + "/get_near_cabs.php";
 
           double user_lat=latLng.latitude;
           double user_lng=latLng.longitude;
